@@ -1,0 +1,40 @@
+/* EventCalendar.css */
+
+/* Modal Styles */
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 100%;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    float: right;
+    cursor: pointer;
+  }
+  
+  .event-marker {
+    background-color: #007bff;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.8em;
+  }
+  
+  .event-marker:hover {
+    background-color: #0056b3;
+  }
+  

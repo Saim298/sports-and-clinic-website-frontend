@@ -1,13 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom"; // Import BrowserRouter
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { EventProvider } from "./context/EventContext";
+import { UserProvider } from "./context/UserContext";
+import { GetEventProvider } from "./context/GetEventContext";
+import { EventProviderByID } from "./context/EventContextByID";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <DndProvider backend={HTML5Backend}>
+    {/* Wrap App with BrowserRouter */}
+    <EventProvider>
+      <UserProvider>
+        <GetEventProvider>
+          <EventProviderByID>
+            <App />
+          </EventProviderByID>
+        </GetEventProvider>
+      </UserProvider>
+    </EventProvider>
+    </DndProvider>
   </React.StrictMode>
 );
 
